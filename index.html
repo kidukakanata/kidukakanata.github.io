@@ -112,8 +112,8 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 .contact-card .mail{font-family:var(--latin);font-size:12px;letter-spacing:.06em;color:var(--muted);word-break:break-all;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
 .notes{font-size:12px;color:var(--muted);margin:36px 0 0;padding-left:1.2em}
 
-/* ── 活動先 ── */
-.links{display:flex;flex-wrap:wrap;gap:0 56px;list-style:none;padding:0;margin:0}
+/* ── プロフィール内のリンク ── */
+.links{display:flex;flex-wrap:wrap;gap:0 48px;list-style:none;padding:0;margin:28px 0 0}
 .links a{display:inline-flex;align-items:baseline;gap:14px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .2s}
 .links a:hover{border-color:var(--ink)}
 .links .svc{font-family:var(--latin);font-size:13px;letter-spacing:.16em}
@@ -145,7 +145,6 @@ footer .latin{letter-spacing:.14em}
     <a class="logo" href="#top">KIDUKA KANATA</a>
     <nav class="nav" aria-label="サイト内">
       <a class="nav-link" href="#works">WORKS</a>
-      <a class="nav-link" href="#links">LINKS</a>
       <a class="nav-link" href="#profile">PROFILE</a>
       <a class="btn-request" href="#request">お仕事のご依頼</a>
     </nav>
@@ -219,16 +218,6 @@ footer .latin{letter-spacing:.14em}
     </div>
   </section>
 
-  <section id="links" class="section">
-    <div class="wrap">
-      <div class="section-head"><h2>LINKS</h2><p>活動先</p></div>
-      <ul class="links">
-        <li><a href="https://x.com/kanata2129" rel="me noopener"><span class="svc">X</span><span class="id">@kanata2129</span></a></li>
-        <li><a href="https://www.pixiv.net/users/2802741" rel="me noopener"><span class="svc">PIXIV</span><span class="id">作品一覧</span></a></li>
-      </ul>
-    </div>
-  </section>
-
   <section id="profile" class="section">
     <div class="wrap">
       <div class="section-head"><h2>PROFILE</h2><p>プロフィール</p></div>
@@ -237,6 +226,10 @@ footer .latin{letter-spacing:.14em}
         <div>
           <p class="who">木塚カナタ<span class="latin">KIDUKA KANATA</span></p>
           <p>イラストレーター。（ここに経歴や得意な作風、これまでのお仕事の分野などを書きます）</p>
+          <ul class="links">
+            <li><a href="https://x.com/kanata2129" rel="me noopener"><span class="svc">X</span><span class="id">@kanata2129</span></a></li>
+            <li><a href="https://www.pixiv.net/users/2802741" rel="me noopener"><span class="svc">PIXIV</span><span class="id">作品一覧</span></a></li>
+          </ul>
         </div>
       </div>
     </div>

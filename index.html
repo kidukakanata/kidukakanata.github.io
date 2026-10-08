@@ -3,189 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>木塚カナタ | イラストレーター</title>
+<title>木塚カナタ Kiduka Kanata</title>
 <meta name="description" content="イラストレーター木塚カナタのポートフォリオ。作品一覧とお仕事のご依頼窓口。">
 <meta name="robots" content="noai, noimageai">
-<meta property="og:title" content="木塚カナタ | イラストレーター">
+<meta property="og:title" content="木塚カナタ Kiduka Kanata">
 <meta property="og:description" content="イラストレーター木塚カナタのポートフォリオ。作品一覧とお仕事のご依頼窓口。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@kanata2129">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@300;400;500&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#F3F5F6;      /* 画用紙（少し青みのある白） */
-  --graphite:#22252B;   /* 鉛筆の芯 */
-  --pencil:#6E7480;     /* 補助テキスト */
-  --rule:#D5DAE0;       /* 罫線 */
-  --indigo:#2C3E8F;     /* 藍インク：依頼導線にだけ使う */
-  --sky:#DDE6F1;        /* 彼方の空：プレースホルダー */
-  --mincho:"Zen Old Mincho","Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho",serif;
-  --gothic:"Zen Kaku Gothic New","Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
-  --gutter:clamp(16px, 4vw, 48px);
+  --wall:#FFFFFF;
+  --ink:#1C1C1E;
+  --muted:#85858B;
+  --rule:#EBEBEA;
+  --tint:#F5F5F3;
+  --accent:#2E3040;     /* トップの絵を入れると、絵から自動で色を拾う */
+  --accent-ink:#fff;
+  --latin:"Lexend Exa",system-ui,sans-serif;
+  --jp:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --gutter:clamp(16px,4vw,56px);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{margin:0;background:var(--paper);color:var(--graphite);font-family:var(--gothic);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--wall);color:var(--ink);font-family:var(--jp);font-size:15px;font-weight:400;line-height:2;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gutter)}
+.latin{font-family:var(--latin);font-weight:400}
 
-/* ヘッダー */
-.site-header{position:sticky;top:0;z-index:20;background:rgba(243,245,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.logo{font-family:var(--mincho);font-weight:700;font-size:19px;text-decoration:none;letter-spacing:.08em}
-.nav{display:flex;align-items:center;gap:28px;font-size:14px}
-.nav a{text-decoration:none}
-.nav a:hover{text-decoration:underline;text-underline-offset:5px}
-.btn-request{display:inline-flex;align-items:center;gap:8px;background:var(--indigo);color:#fff;text-decoration:none;padding:9px 18px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap}
-.btn-request:hover{background:#22327A}
-@media (max-width:720px){.nav .nav-link{display:none}}
+/* ── ヘッダー ── */
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:var(--latin);font-weight:400;font-size:17px;letter-spacing:.18em;text-decoration:none;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:30px}
+.nav .nav-link{font-family:var(--latin);font-size:11px;letter-spacing:.16em;text-decoration:none;padding:4px 0;border-bottom:1px solid transparent}
+.nav .nav-link:hover{border-color:var(--ink)}
+.btn-request{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:8px 20px;border-radius:999px;font-size:13px;font-weight:500;letter-spacing:.08em;white-space:nowrap;transition:filter .2s}
+.btn-request:hover{filter:brightness(1.15)}
+@media (max-width:760px){.nav .nav-link{display:none}}
 
-/* ヒーロー：大きな一枚絵と縦書きの名前 */
-.hero{display:grid;grid-template-columns:1fr auto;gap:clamp(20px,4vw,56px);align-items:end;padding:clamp(28px,5vw,64px) 0 clamp(48px,7vw,96px)}
-.hero-art{aspect-ratio:4/3;background:var(--sky);border-radius:4px;overflow:hidden;position:relative}
-.hero-art img{width:100%;height:100%;object-fit:cover}
-.hero-name{writing-mode:vertical-rl;font-family:var(--mincho);font-weight:900;font-size:clamp(56px,9vw,120px);line-height:1.15;white-space:nowrap;letter-spacing:.12em;margin:0}
-.hero-side{display:flex;gap:clamp(12px,2vw,24px);align-items:flex-end}
-.hero-meta{writing-mode:vertical-rl;font-size:14px;color:var(--pencil);letter-spacing:.2em;margin:0}
-.hero-meta span{display:block;margin-left:10px}
-.hero-latin{font-family:var(--mincho);letter-spacing:.3em}
-@media (max-width:720px){
-  .hero{grid-template-columns:1fr;gap:20px}
-  .hero-side{order:-1;flex-direction:column-reverse;align-items:flex-start;gap:4px}
-  .hero-name{writing-mode:horizontal-tb;font-size:clamp(40px,12vw,60px);letter-spacing:.08em}
-  .hero-meta{writing-mode:horizontal-tb;letter-spacing:.1em;display:flex;gap:14px}
-  .hero-meta span{margin:0}
-}
+/* ── ヒーロー：絵を画面いっぱいに ── */
+.hero{position:relative;height:calc(100svh - 68px);min-height:420px;background:var(--tint);overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;animation:fade 1.8s ease both}
+.hero .ph{height:100%;display:grid;place-items:center;color:var(--muted);font-size:13px}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.intro{padding:clamp(40px,6vw,72px) 0 0}
+.intro p{margin:0;font-size:13px;color:var(--muted)}
+.intro .name{font-size:15px;color:var(--ink);margin-right:14px}
+.intro .name .latin{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-left:10px}
+@media (max-width:760px){.hero{height:auto;aspect-ratio:4/5;min-height:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
-/* セクション共通 */
-section{scroll-margin-top:72px}
-.section{padding:clamp(56px,8vw,104px) 0;border-top:1px solid var(--rule)}
-.section h2{font-family:var(--mincho);font-weight:700;font-size:clamp(28px,4vw,40px);letter-spacing:.1em;margin:0 0 8px;line-height:1.4}
-.section .lead{color:var(--pencil);margin:0 0 36px;max-width:38em}
+/* ── セクション共通 ── */
+section{scroll-margin-top:80px}
+.section{padding:clamp(72px,10vw,136px) 0}
+.section-head{margin:0 0 clamp(32px,4vw,52px)}
+.section-head h2{font-family:var(--latin);font-weight:300;font-size:clamp(22px,2.6vw,30px);letter-spacing:.24em;margin:0;line-height:1.3}
+.section-head p{margin:6px 0 0;font-size:12px;color:var(--muted);letter-spacing:.12em}
+.lead{max-width:36em;margin:0 0 44px}
 
-/* 作品 */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
-.filters button{font:inherit;font-size:14px;background:transparent;border:1px solid var(--rule);color:var(--graphite);padding:6px 16px;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--graphite);border-color:var(--graphite);color:var(--paper)}
-.gallery{columns:3 280px;column-gap:16px}
-@media (max-width:620px){.gallery{columns:2;column-gap:10px}.work{margin-bottom:12px}}
-.work{break-inside:avoid;margin:0 0 16px;cursor:zoom-in}
+/* ── 作品 ── */
+.filters{display:flex;flex-wrap:wrap;gap:22px;margin:0 0 28px}
+.filters button{font-family:var(--latin);font-size:11px;letter-spacing:.16em;background:none;border:0;border-bottom:1px solid transparent;color:var(--muted);padding:4px 0;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,16px);grid-auto-flow:dense}
+.work{margin:0;position:relative;aspect-ratio:1}
+.work.feature{grid-column:span 2;grid-row:span 2}
 .work[hidden]{display:none}
-.work button{all:unset;display:block;width:100%;cursor:zoom-in}
-.work .thumb{background:var(--sky);border-radius:4px;overflow:hidden;display:grid;place-items:center;color:var(--pencil);font-size:13px}
-.work .thumb img{width:100%;height:auto}
-.work figcaption{font-size:13px;color:var(--pencil);padding:8px 2px 0;line-height:1.6}
-.work figcaption b{color:var(--graphite);font-weight:500}
+.work button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in;overflow:hidden;background:var(--tint)}
+.work img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.work button:hover img,.work button:focus-visible img{transform:scale(1.03)}
+.work .ph{width:100%;height:100%;display:grid;place-items:center;color:var(--muted);font-size:12px}
+.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;color:#fff;font-size:12px;line-height:1.6;background:linear-gradient(transparent,rgba(20,20,24,.5));opacity:0;transition:opacity .3s;pointer-events:none}
+.work button:hover+figcaption,.work button:focus-visible+figcaption{opacity:1}
+.work:not(:has(img)) figcaption{display:none}
+@media (hover:none){.work figcaption{opacity:1}}
+@media (max-width:620px){.gallery{grid-template-columns:repeat(2,1fr)}}
 
-/* ライトボックス */
-dialog.viewer{border:0;padding:0;background:transparent;max-width:min(94vw,1400px);max-height:94vh}
-dialog.viewer::backdrop{background:rgba(20,22,26,.88)}
-.viewer img,.viewer .ph{max-width:94vw;max-height:84vh;width:auto;height:auto;border-radius:4px}
-.viewer .ph{width:min(80vw,900px);aspect-ratio:4/3;background:var(--sky);display:grid;place-items:center;color:var(--pencil)}
-.viewer p{color:#E9ECEF;font-size:14px;margin:12px 0 0;text-align:center}
-.viewer .close{position:fixed;top:16px;right:16px;font:inherit;font-size:14px;background:#fff;color:var(--graphite);border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+/* ── 拡大表示 ── */
+dialog.viewer{border:0;padding:0;background:transparent;max-width:96vw;max-height:96vh;overflow:visible}
+dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
+.viewer img{max-width:92vw;max-height:84vh;width:auto;height:auto}
+.viewer p{color:var(--muted);font-size:13px;margin:12px 0 0;text-align:center}
+.viewer .close{position:fixed;top:18px;right:20px;font-family:var(--latin);font-size:11px;letter-spacing:.16em;background:none;border:0;color:var(--ink);padding:8px;cursor:pointer}
 
-/* ご依頼 */
-.request-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px)}
-@media (max-width:860px){.request-grid{grid-template-columns:1fr}.contact-card{position:static}}
-.request h3{font-family:var(--mincho);font-size:20px;letter-spacing:.08em;margin:0 0 14px}
-.menu{list-style:none;padding:0;margin:0 0 36px}
-.menu li{padding:12px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px}
-.menu li small{color:var(--pencil)}
+/* ── ご依頼 ── */
+.request{background:var(--tint)}
+.request-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(36px,6vw,96px)}
+@media (max-width:860px){.request-grid{grid-template-columns:1fr}}
+.request h3{font-size:14px;font-weight:500;letter-spacing:.12em;margin:0 0 10px}
+.menu{list-style:none;padding:0;margin:0 0 48px}
+.menu li{padding:13px 0;border-bottom:1px solid #E2E2DF;display:flex;justify-content:space-between;gap:16px}
+.menu li small{color:var(--muted);font-size:12px}
 .flow{list-style:none;padding:0;margin:0;counter-reset:step}
-.flow li{counter-increment:step;display:grid;grid-template-columns:2.2em 1fr;gap:4px 12px;padding:10px 0}
-.flow li::before{content:counter(step);font-family:var(--mincho);font-weight:700;font-size:20px;color:var(--indigo);line-height:1.5}
-.flow li span{color:var(--pencil);font-size:14px;grid-column:2}
-.contact-card{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:clamp(24px,3vw,36px);align-self:start;position:sticky;top:84px}
-.contact-card p{margin:0 0 20px}
-.contact-card .btn-request{font-size:16px;padding:14px 24px;width:100%;justify-content:center}
-.contact-card .alt{margin:14px 0 0;font-size:14px;color:var(--pencil);text-align:center}
-.contact-card .mail{font-size:14px;color:var(--pencil);word-break:break-all;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule)}
-.notes{font-size:13px;color:var(--pencil);margin:28px 0 0;padding-left:1.2em}
+.flow li{counter-increment:step;display:grid;grid-template-columns:2.6em 1fr;gap:0 12px;padding:9px 0}
+.flow li::before{content:"0" counter(step);font-family:var(--latin);font-weight:300;font-size:13px;letter-spacing:.1em;color:var(--muted);line-height:2.3}
+.flow li span{color:var(--muted);font-size:13px;grid-column:2}
+.contact-card{background:#fff;padding:clamp(28px,3vw,44px);align-self:start;position:sticky;top:92px}
+@media (max-width:860px){.contact-card{position:static}}
+.contact-card p{margin:0 0 22px}
+.contact-card .btn-request{font-size:14px;padding:15px 24px;width:100%}
+.contact-card .alt{margin:16px 0 0;font-size:13px;color:var(--muted);text-align:center}
+.contact-card .mail{font-family:var(--latin);font-size:12px;letter-spacing:.06em;color:var(--muted);word-break:break-all;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+.notes{font-size:12px;color:var(--muted);margin:36px 0 0;padding-left:1.2em}
 
-/* リンク */
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;list-style:none;padding:0;margin:0}
-.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 20px;border:1px solid var(--rule);border-radius:8px;text-decoration:none;background:#fff}
-.links a:hover{border-color:var(--graphite)}
-.links .svc{font-weight:700}
-.links .id{color:var(--pencil);font-size:14px}
+/* ── 活動先 ── */
+.links{display:flex;flex-wrap:wrap;gap:0 56px;list-style:none;padding:0;margin:0}
+.links a{display:inline-flex;align-items:baseline;gap:14px;padding:10px 0;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .2s}
+.links a:hover{border-color:var(--ink)}
+.links .svc{font-family:var(--latin);font-size:13px;letter-spacing:.16em}
+.links .id{color:var(--muted);font-size:12px}
 
-/* プロフィール */
-.profile{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:start}
-.avatar{width:clamp(96px,14vw,160px);aspect-ratio:1;border-radius:50%;background:var(--sky);overflow:hidden}
-.profile p{max-width:36em;margin:0 0 12px}
+/* ── プロフィール ── */
+.profile{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,64px);align-items:start}
+.avatar{width:clamp(96px,12vw,140px);aspect-ratio:1;border-radius:50%;background:var(--tint);overflow:hidden}
+.profile .who{font-size:16px;margin:0 0 4px}
+.profile .who .latin{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-left:10px}
+.profile p{max-width:34em;margin:0 0 12px}
 @media (max-width:560px){.profile{grid-template-columns:1fr}}
 
-/* フッター */
-footer{border-top:1px solid var(--rule);padding:32px 0 96px;font-size:13px;color:var(--pencil)}
-footer p{margin:0 0 6px}
+footer{padding:40px 0 100px;font-size:11px;color:var(--muted)}
+footer p{margin:0 0 4px}
+footer .latin{letter-spacing:.14em}
 
-/* スマホ用の常設依頼ボタン */
 .fab{display:none}
-@media (max-width:720px){
-  .fab{display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;box-shadow:0 6px 20px rgba(44,62,143,.28);padding:14px}
+@media (max-width:760px){
+  .fab{display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:30;padding:14px;box-shadow:0 8px 24px -8px rgba(28,28,30,.4)}
   .site-header .btn-request{display:none}
 }
 </style>
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="header">
   <div class="wrap">
-    <a class="logo" href="#top">木塚カナタ</a>
+    <a class="logo" href="#top">KIDUKA KANATA</a>
     <nav class="nav" aria-label="サイト内">
-      <a class="nav-link" href="#works">作品</a>
-      <a class="nav-link" href="#links">活動先</a>
-      <a class="nav-link" href="#profile">プロフィール</a>
+      <a class="nav-link" href="#works">WORKS</a>
+      <a class="nav-link" href="#links">LINKS</a>
+      <a class="nav-link" href="#profile">PROFILE</a>
       <a class="btn-request" href="#request">お仕事のご依頼</a>
     </nav>
   </div>
 </header>
 
 <main id="top">
-  <div class="wrap">
-    <div class="hero">
-      <div class="hero-art">
-        <!-- 代表作に差し替え：<img src="images/hero.jpg" alt="作品タイトル"> -->
-        <div style="height:100%;display:grid;place-items:center;color:var(--pencil);font-size:14px">代表作をここに</div>
-      </div>
-      <div class="hero-side">
-        <p class="hero-meta"><span>イラストレーター</span><span class="hero-latin">Kiduka Kanata</span></p>
-        <h1 class="hero-name">木塚カナタ</h1>
-      </div>
-    </div>
+  <!-- トップの絵：<div class="ph">…</div> を <img id="heroImg" src="images/hero.jpg" alt="作品名"> に差し替える。
+       差し色は絵から自動で決まる。色を指定したいときは img に data-accent="#色コード" を書く -->
+  <div class="hero">
+    <div class="ph">代表作をここに</div>
+  </div>
+  <div class="wrap intro">
+    <p><span class="name">木塚カナタ<span class="latin">ILLUSTRATOR</span></span></p>
   </div>
 
   <section id="works" class="section">
     <div class="wrap">
-      <h2>作品</h2>
-      <p class="lead">クリックすると大きく表示されます。</p>
+      <div class="section-head"><h2>WORKS</h2><p>作品</p></div>
       <div class="filters" role="group" aria-label="作品の絞り込み">
-        <button type="button" data-filter="all" aria-pressed="true">すべて</button>
-        <button type="button" data-filter="commission" aria-pressed="false">お仕事</button>
-        <button type="button" data-filter="original" aria-pressed="false">オリジナル</button>
+        <button type="button" data-filter="all" aria-pressed="true">ALL</button>
+        <button type="button" data-filter="commission" aria-pressed="false">COMMISSION</button>
+        <button type="button" data-filter="original" aria-pressed="false">ORIGINAL</button>
       </div>
       <div class="gallery" id="gallery">
-        <!-- 作品の追加：figure を1つコピーして、画像・タイトル・data-cat を書き換える -->
-        <figure class="work" data-cat="commission"><button type="button" data-title="作品タイトル" data-note="クライアント名・用途"><div class="thumb" style="aspect-ratio:3/4">作品画像</div></button><figcaption><b>作品タイトル</b><br>クライアント名・用途</figcaption></figure>
-        <figure class="work" data-cat="original"><button type="button" data-title="作品タイトル" data-note="オリジナル"><div class="thumb" style="aspect-ratio:4/3">作品画像</div></button><figcaption><b>作品タイトル</b><br>オリジナル</figcaption></figure>
-        <figure class="work" data-cat="commission"><button type="button" data-title="作品タイトル" data-note="クライアント名・用途"><div class="thumb" style="aspect-ratio:2/3">作品画像</div></button><figcaption><b>作品タイトル</b><br>クライアント名・用途</figcaption></figure>
-        <figure class="work" data-cat="original"><button type="button" data-title="作品タイトル" data-note="オリジナル"><div class="thumb" style="aspect-ratio:1/1">作品画像</div></button><figcaption><b>作品タイトル</b><br>オリジナル</figcaption></figure>
-        <figure class="work" data-cat="commission"><button type="button" data-title="作品タイトル" data-note="クライアント名・用途"><div class="thumb" style="aspect-ratio:16/9">作品画像</div></button><figcaption><b>作品タイトル</b><br>クライアント名・用途</figcaption></figure>
-        <figure class="work" data-cat="original"><button type="button" data-title="作品タイトル" data-note="オリジナル"><div class="thumb" style="aspect-ratio:3/4">作品画像</div></button><figcaption><b>作品タイトル</b><br>オリジナル</figcaption></figure>
+        <!-- 作品の追加：figure をコピーして画像・タイトル・data-cat（commission / original）を書き換える。
+             推しの作品は class="work feature" で大きく表示 -->
+        <figure class="work feature" data-cat="original"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <figure class="work" data-cat="original"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <figure class="work" data-cat="original"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section id="request" class="section request">
     <div class="wrap">
-      <h2>お仕事のご依頼</h2>
+      <div class="section-head"><h2>REQUEST</h2><p>お仕事のご依頼</p></div>
       <p class="lead">キャラクターイラストを中心にお受けしています。内容が固まっていなくても、まずはお気軽にご相談ください。</p>
       <div class="request-grid">
         <div>
@@ -221,21 +221,23 @@ footer p{margin:0 0 6px}
 
   <section id="links" class="section">
     <div class="wrap">
-      <h2>活動先</h2>
-      <p class="lead">最新の作品や告知は各サービスで発信しています。</p>
+      <div class="section-head"><h2>LINKS</h2><p>活動先</p></div>
       <ul class="links">
         <li><a href="https://x.com/kanata2129" rel="me noopener"><span class="svc">X</span><span class="id">@kanata2129</span></a></li>
-        <li><a href="https://www.pixiv.net/users/2802741" rel="me noopener"><span class="svc">pixiv</span><span class="id">作品一覧</span></a></li>
+        <li><a href="https://www.pixiv.net/users/2802741" rel="me noopener"><span class="svc">PIXIV</span><span class="id">作品一覧</span></a></li>
       </ul>
     </div>
   </section>
 
   <section id="profile" class="section">
-    <div class="wrap profile">
-      <div class="avatar" aria-hidden="true"></div>
-      <div>
-        <h2>木塚カナタ</h2>
-        <p>イラストレーター。（ここに経歴や得意な作風、これまでのお仕事の分野などを書きます）</p>
+    <div class="wrap">
+      <div class="section-head"><h2>PROFILE</h2><p>プロフィール</p></div>
+      <div class="profile">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <p class="who">木塚カナタ<span class="latin">KIDUKA KANATA</span></p>
+          <p>イラストレーター。（ここに経歴や得意な作風、これまでのお仕事の分野などを書きます）</p>
+        </div>
       </div>
     </div>
   </section>
@@ -244,52 +246,71 @@ footer p{margin:0 0 6px}
 <footer>
   <div class="wrap">
     <p>当サイトの画像の無断転載・転用・AI学習への利用を禁止します。</p>
-    <p>© 木塚カナタ</p>
+    <p class="latin">© KIDUKA KANATA</p>
   </div>
 </footer>
 
 <a class="btn-request fab" href="#request">お仕事のご依頼</a>
 
 <dialog class="viewer" id="viewer" aria-label="作品の拡大表示">
-  <button type="button" class="close" id="viewerClose">閉じる</button>
+  <button type="button" class="close" id="viewerClose">CLOSE</button>
   <div id="viewerBody"></div>
   <p id="viewerCaption"></p>
 </dialog>
 
 <script>
+// トップの絵から差し色をもらう（絵の中で多く使われている鮮やかな色み）
+function pickAccent(img){
+  try{
+    const c=document.createElement('canvas'),s=64; c.width=c.height=s;
+    const x=c.getContext('2d'); x.drawImage(img,0,0,s,s);
+    const d=x.getImageData(0,0,s,s).data;
+    const bins=Array.from({length:12},()=>({w:0,r:0,g:0,b:0}));
+    for(let i=0;i<d.length;i+=4){
+      const r=d[i]/255,g=d[i+1]/255,b=d[i+2]/255;
+      const mx=Math.max(r,g,b),mn=Math.min(r,g,b),l=(mx+mn)/2,ch=mx-mn;
+      if(ch<.22||l<.15||l>.85) continue;
+      let h=mx===r?((g-b)/ch)%6:mx===g?(b-r)/ch+2:(r-g)/ch+4; h=((h*60)+360)%360;
+      const k=bins[Math.floor(h/30)],w=ch*ch; k.w+=w;k.r+=d[i]*w;k.g+=d[i+1]*w;k.b+=d[i+2]*w;
+    }
+    const top=bins.reduce((a,b)=>b.w>a.w?b:a); if(top.w<3) return;
+    let r=top.r/top.w,g=top.g/top.w,b=top.b/top.w;
+    const lum=v=>{v/=255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4};
+    while(.2126*lum(r)+.7152*lum(g)+.0722*lum(b)>.18){r*=.9;g*=.9;b*=.9;} // 白文字が読める濃さに
+    document.documentElement.style.setProperty('--accent',`rgb(${r|0},${g|0},${b|0})`);
+  }catch(e){}
+}
+const hero=document.getElementById('heroImg');
+if(hero){
+  if(hero.dataset.accent) document.documentElement.style.setProperty('--accent',hero.dataset.accent);
+  else if(hero.complete) pickAccent(hero); else hero.addEventListener('load',()=>pickAccent(hero));
+}
+
 // 作品の絞り込み
-const buttons = document.querySelectorAll('.filters button');
-const works = document.querySelectorAll('.work[data-cat]');
-buttons.forEach(b => b.addEventListener('click', () => {
-  buttons.forEach(x => x.setAttribute('aria-pressed', x === b));
-  const f = b.dataset.filter;
-  works.forEach(w => w.hidden = !(f === 'all' || w.dataset.cat === f));
+const buttons=document.querySelectorAll('.filters button');
+const works=document.querySelectorAll('.work[data-cat]');
+buttons.forEach(b=>b.addEventListener('click',()=>{
+  buttons.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.filter;
+  works.forEach(w=>w.hidden=!(f==='all'||w.dataset.cat===f));
 }));
 
 // 拡大表示
-const viewer = document.getElementById('viewer');
-const body = document.getElementById('viewerBody');
-const cap = document.getElementById('viewerCaption');
-document.getElementById('gallery').addEventListener('click', e => {
-  const btn = e.target.closest('button');
-  if (!btn) return;
-  const img = btn.querySelector('img');
-  body.innerHTML = '';
-  if (img) {
-    const big = document.createElement('img');
-    big.src = img.dataset.full || img.src;
-    big.alt = img.alt;
-    body.append(big);
-  } else {
-    const ph = document.createElement('div');
-    ph.className = 'ph'; ph.textContent = '作品画像';
-    body.append(ph);
-  }
-  cap.textContent = [btn.dataset.title, btn.dataset.note].filter(Boolean).join('　');
+const viewer=document.getElementById('viewer'),vBody=document.getElementById('viewerBody'),vCap=document.getElementById('viewerCaption');
+function openViewer(img,title,note){
+  vBody.innerHTML='';
+  const big=document.createElement('img'); big.src=img.dataset.full||img.src; big.alt=img.alt;
+  vBody.append(big);
+  vCap.textContent=[title,note].filter(Boolean).join('　');
   viewer.showModal();
+}
+document.getElementById('gallery').addEventListener('click',e=>{
+  const btn=e.target.closest('button'); if(!btn) return;
+  const img=btn.querySelector('img'); if(!img) return;
+  openViewer(img,btn.dataset.title,btn.dataset.note);
 });
-document.getElementById('viewerClose').addEventListener('click', () => viewer.close());
-viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+document.getElementById('viewerClose').addEventListener('click',()=>viewer.close());
+viewer.addEventListener('click',e=>{if(e.target===viewer) viewer.close();});
 </script>
 </body>
 </html>

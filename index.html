@@ -94,18 +94,8 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 
 /* ── ご依頼 ── */
 .request{background:var(--tint)}
-.request-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(36px,6vw,96px)}
-@media (max-width:860px){.request-grid{grid-template-columns:1fr}}
-.request h3{font-size:14px;font-weight:500;letter-spacing:.12em;margin:0 0 10px}
-.menu{list-style:none;padding:0;margin:0 0 48px}
-.menu li{padding:13px 0;border-bottom:1px solid #E2E2DF;display:flex;justify-content:space-between;gap:16px}
-.menu li small{color:var(--muted);font-size:12px}
-.flow{list-style:none;padding:0;margin:0;counter-reset:step}
-.flow li{counter-increment:step;display:grid;grid-template-columns:2.6em 1fr;gap:0 12px;padding:9px 0}
-.flow li::before{content:"0" counter(step);font-family:var(--latin);font-weight:300;font-size:13px;letter-spacing:.1em;color:var(--muted);line-height:2.3}
-.flow li span{color:var(--muted);font-size:13px;grid-column:2}
-.contact-card{background:#fff;padding:clamp(28px,3vw,44px);align-self:start;position:sticky;top:92px}
-@media (max-width:860px){.contact-card{position:static}}
+.request-grid{max-width:560px}
+.contact-card{background:#fff;padding:clamp(28px,3vw,44px)}
 .contact-card p{margin:0 0 22px}
 .contact-card .btn-request{font-size:14px;padding:15px 24px;width:100%}
 .contact-card .alt{margin:16px 0 0;font-size:13px;color:var(--muted);text-align:center}
@@ -198,23 +188,6 @@ footer .latin{letter-spacing:.14em}
       <div class="section-head"><h2>REQUEST</h2><p>お仕事のご依頼</p></div>
       <p class="lead">キャラクターイラストを中心にお受けしています。内容が固まっていなくても、まずはお気軽にご相談ください。</p>
       <div class="request-grid">
-        <div>
-          <h3>お受けしている内容</h3>
-          <ul class="menu">
-            <li>キャラクターイラスト<small>一枚絵・立ち絵</small></li>
-            <li>キービジュアル<small>告知・パッケージ</small></li>
-            <li>グッズ用イラスト<small>アクリル・缶バッジなど</small></li>
-            <li>キャラクターデザイン<small>三面図・表情差分</small></li>
-          </ul>
-          <h3>ご依頼の流れ</h3>
-          <ol class="flow">
-            <li>ご相談<span>用途・サイズ・納期・ご予算をお知らせください</span></li>
-            <li>お見積り<span>内容を確認し、お見積りとスケジュールをお送りします</span></li>
-            <li>ラフ<span>構図案をお出しし、方向性を確認します</span></li>
-            <li>線画・彩色<span>各段階でチェックをいただきながら進めます</span></li>
-            <li>納品<span>指定の形式でデータをお渡しします</span></li>
-          </ol>
-        </div>
         <aside class="contact-card" aria-label="ご連絡先">
           <p>ご依頼・ご相談はメールで承っています。2〜3営業日以内にお返事します。</p>
           <a class="btn-request" href="mailto:kidukakanata@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E5%BE%A1%E7%A4%BE%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E7%94%A8%E9%80%94%EF%BC%9A%0A%E3%82%B5%E3%82%A4%E3%82%BA%E3%83%BB%E7%82%B9%E6%95%B0%EF%BC%9A%0A%E7%B4%8D%E6%9C%9F%EF%BC%9A%0A%E3%81%94%E4%BA%88%E7%AE%97%EF%BC%9A%0A%E3%81%9D%E3%81%AE%E4%BB%96%EF%BC%9A%0A">メールで相談する</a>

@@ -127,6 +127,17 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 .profile p{max-width:34em;margin:0 0 12px}
 @media (max-width:560px){.profile{grid-template-columns:1fr}}
 
+/* ── 実績 ── */
+.career{margin:48px 0 0;max-width:640px}
+.career h3{font-size:14px;font-weight:500;letter-spacing:.12em;margin:0 0 6px}
+.career h3 small{font-size:11px;color:var(--muted);margin-left:10px;font-weight:400}
+.career h4{font-size:12px;font-weight:400;color:var(--muted);letter-spacing:.14em;margin:22px 0 4px}
+.career ul{list-style:none;padding:0;margin:0}
+.career li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.7}
+.career li small{flex:0 0 auto;font-size:11px;color:var(--muted);letter-spacing:.06em;text-align:right}
+.career-note{font-size:11px;color:var(--muted);margin:14px 0 0!important;line-height:1.9}
+@media (max-width:560px){.career li{flex-direction:column;gap:0}.career li small{text-align:left}}
+
 footer{padding:40px 0 100px;font-size:11px;color:var(--muted)}
 footer p{margin:0 0 4px}
 footer .latin{letter-spacing:.14em}
@@ -225,11 +236,37 @@ footer .latin{letter-spacing:.14em}
         <div class="avatar" aria-hidden="true"></div>
         <div>
           <p class="who">木塚カナタ<span class="latin">KIDUKA KANATA</span></p>
-          <p>イラストレーター。（ここに経歴や得意な作風、これまでのお仕事の分野などを書きます）</p>
+          <p>イラストレーター。ゲームのキャラクターイラストやライトノベルの挿絵を中心に活動しています。</p>
           <ul class="links">
             <li><a href="https://x.com/kanata2129" rel="me noopener"><span class="svc">X</span><span class="id">@kanata2129</span></a></li>
             <li><a href="https://www.pixiv.net/users/2802741" rel="me noopener"><span class="svc">PIXIV</span><span class="id">作品一覧</span></a></li>
           </ul>
+          <div class="career">
+            <h3>主な実績<small>敬称略</small></h3>
+            <h4>ゲーム</h4>
+            <ul>
+              <li><span>メメントモリ</span><small>バンク・オブ・イノベーション</small></li>
+              <li><span>幻獣契約クリプトラクト</span><small>バンク・オブ・イノベーション</small></li>
+              <li><span>maimai／三国志大戦／ワンダーランドウォーズ</span><small>セガ</small></li>
+              <li><span>イドラ ファンタシースターサーガ／オルタンシア・サーガ</span><small>セガ</small></li>
+              <li><span>Fate/Grand Order Arcade</span><small>セガ</small></li>
+              <li><span>Lord of Knights</span><small>Aiming</small></li>
+              <li><span>かんぱに☆ガールズ／Storia -宝物娘-</span><small>DMM GAMES</small></li>
+              <li><span>戦国大河／神酒ノ尊</span><small>バンダイナムコオンライン</small></li>
+              <li><span>ファイナルファンタジーレジェンズII 時空の水晶</span><small>スクウェア・エニックス</small></li>
+            </ul>
+            <h4>遊技機</h4>
+            <ul>
+              <li><span>23/7－トゥエンティ スリー セブン－</span><small>藤商事</small></li>
+            </ul>
+            <h4>書籍</h4>
+            <ul>
+              <li><span>僕の装備は最強だけど自由過ぎる（1〜3巻）</span><small>アルファポリス</small></li>
+              <li><span>紅轍のクアドリガ</span><small>ファミ通文庫</small></li>
+              <li><span>傭兵物語 ～純粋なる叛逆者～（3巻）</span><small>一二三書房</small></li>
+            </ul>
+            <p class="career-note">※傭兵物語 1〜2巻のイラストおよび既存キャラクターの原案は白井鋭利先生です。<br>ほか多数</p>
+          </div>
         </div>
       </div>
     </div>

@@ -102,7 +102,12 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 .contact-card{background:#fff;padding:clamp(28px,3vw,44px)}
 .contact-card p{margin:0 0 22px}
 .contact-card .btn-request{font-size:14px;padding:15px 24px;width:100%}
-.contact-card .mail{font-family:var(--latin);font-size:12px;letter-spacing:.06em;color:var(--muted);word-break:break-all;margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+.contact-card .mail{font-family:var(--latin);font-size:12px;letter-spacing:.06em;color:var(--muted);margin-top:22px;padding-top:18px;border-top:1px solid var(--rule)}
+.contact-card .mail{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px}
+#mailAddr{white-space:nowrap}
+.copy{font-family:var(--latin);font-size:11px;letter-spacing:.16em;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--ink);padding:2px 0;cursor:pointer;flex:0 0 auto;transition:opacity .2s}
+.copy:hover{opacity:.6}
+.copy-status{margin:8px 0 0!important;min-height:1.5em;font-size:12px;color:var(--muted)}
 
 /* ── プロフィール内のリンク ── */
 .links{display:flex;flex-wrap:wrap;gap:0 48px;list-style:none;padding:0;margin:28px 0 0}
@@ -230,7 +235,11 @@ footer .latin{letter-spacing:.14em}
         <aside class="contact-card" aria-label="ご連絡先">
           <p>ご依頼・ご相談はメールで承っています。2〜3営業日以内にお返事します。</p>
           <a class="btn-request" href="mailto:kidukakanata@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E5%BE%A1%E7%A4%BE%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E7%94%A8%E9%80%94%EF%BC%9A%0A%E3%82%B5%E3%82%A4%E3%82%BA%E3%83%BB%E7%82%B9%E6%95%B0%EF%BC%9A%0A%E7%B4%8D%E6%9C%9F%EF%BC%9A%0A%E3%81%94%E4%BA%88%E7%AE%97%EF%BC%9A%0A%E3%81%9D%E3%81%AE%E4%BB%96%EF%BC%9A%0A">ご依頼はこちら</a>
-          <div class="mail">kidukakanata@gmail.com</div>
+          <div class="mail">
+            <span id="mailAddr">kidukakanata@gmail.com</span>
+            <button type="button" class="copy" id="copyMail" aria-label="メールアドレスをコピー">COPY</button>
+          </div>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
         </aside>
       </div>
     </section>
@@ -305,6 +314,19 @@ document.getElementById('gallery').addEventListener('click',e=>{
 });
 document.getElementById('viewerClose').addEventListener('click',()=>viewer.close());
 viewer.addEventListener('click',e=>{if(e.target===viewer) viewer.close();});
+// メールアドレスのコピー
+const copyBtn=document.getElementById('copyMail'),copyStatus=document.getElementById('copyStatus');
+copyBtn.addEventListener('click',async()=>{
+  const text=document.getElementById('mailAddr').textContent.trim();
+  let ok=false;
+  try{await navigator.clipboard.writeText(text);ok=true;}catch(e){
+    const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.opacity='0';
+    document.body.append(t);t.select();try{ok=document.execCommand('copy');}catch(_){}t.remove();
+  }
+  copyBtn.textContent=ok?'COPIED':'COPY';
+  copyStatus.textContent=ok?'メールアドレスをコピーしました':'コピーできませんでした。アドレスを選択してコピーしてください';
+  clearTimeout(copyBtn._t);copyBtn._t=setTimeout(()=>{copyBtn.textContent='COPY';copyStatus.textContent='';},2500);
+});
 </script>
 </body>
 </html>

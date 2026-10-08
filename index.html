@@ -92,9 +92,11 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 .viewer p{color:var(--muted);font-size:13px;margin:12px 0 0;text-align:center}
 .viewer .close{position:fixed;top:18px;right:20px;font-family:var(--latin);font-size:11px;letter-spacing:.16em;background:none;border:0;color:var(--ink);padding:8px;cursor:pointer}
 
-/* ── ご依頼 ── */
-.request{background:var(--tint)}
-.request-grid{max-width:560px}
+/* ── プロフィールとご依頼を横並びに ── */
+.duo{display:grid;grid-template-columns:1.45fr 1fr;gap:clamp(32px,4vw,64px);align-items:start;padding-top:clamp(72px,10vw,136px);padding-bottom:clamp(72px,10vw,136px)}
+.duo-request{background:var(--tint);padding:clamp(32px,4vw,56px)}
+.duo-request .lead{margin-bottom:32px}
+@media (max-width:960px){.duo{grid-template-columns:1fr}}
 .contact-card{background:#fff;padding:clamp(28px,3vw,44px)}
 .contact-card p{margin:0 0 22px}
 .contact-card .btn-request{font-size:14px;padding:15px 24px;width:100%}
@@ -110,7 +112,7 @@ dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 
 /* ── プロフィール ── */
 .profile{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,64px);align-items:start}
-.avatar{width:clamp(96px,12vw,140px);aspect-ratio:1;border-radius:50%;background:var(--tint);overflow:hidden}
+.avatar{width:clamp(88px,9vw,120px);aspect-ratio:1;border-radius:50%;background:var(--tint);overflow:hidden}
 .profile .who{font-size:16px;margin:0 0 4px}
 .profile .who .latin{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-left:10px}
 .profile p{max-width:34em;margin:0 0 12px}
@@ -182,26 +184,9 @@ footer .latin{letter-spacing:.14em}
     </div>
   </section>
 
-  <section id="request" class="section request">
-    <div class="wrap">
-      <div class="section-head"><h2>REQUEST</h2><p>お仕事のご依頼</p></div>
-      <p class="lead">キャラクターイラストを中心にお受けしています。内容が固まっていなくても、まずはお気軽にご相談ください。</p>
-      <div class="request-grid">
-        <aside class="contact-card" aria-label="ご連絡先">
-          <p>ご依頼・ご相談はメールで承っています。2〜3営業日以内にお返事します。</p>
-          <a class="btn-request" href="mailto:kidukakanata@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E5%BE%A1%E7%A4%BE%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E7%94%A8%E9%80%94%EF%BC%9A%0A%E3%82%B5%E3%82%A4%E3%82%BA%E3%83%BB%E7%82%B9%E6%95%B0%EF%BC%9A%0A%E7%B4%8D%E6%9C%9F%EF%BC%9A%0A%E3%81%94%E4%BA%88%E7%AE%97%EF%BC%9A%0A%E3%81%9D%E3%81%AE%E4%BB%96%EF%BC%9A%0A">メールで相談する</a>
-          <div class="mail">kidukakanata@gmail.com</div>
-        </aside>
-      </div>
-      <ul class="notes">
-        <li>メールのテンプレートに沿って書いていただくと、お見積りがスムーズです。</li>
-        <li>スケジュールの都合でお受けできない場合もございます。</li>
-      </ul>
-    </div>
-  </section>
 
-  <section id="profile" class="section">
-    <div class="wrap">
+  <div class="wrap duo">
+    <section id="profile" class="duo-profile">
       <div class="section-head"><h2>PROFILE</h2><p>プロフィール</p></div>
       <div class="profile">
         <div class="avatar" aria-hidden="true"></div>
@@ -234,8 +219,23 @@ footer .latin{letter-spacing:.14em}
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section id="request" class="duo-request">
+      <div class="section-head"><h2>REQUEST</h2><p>お仕事のご依頼</p></div>
+      <p class="lead">キャラクターイラストを中心にお受けしています。内容が固まっていなくても、まずはお気軽にご相談ください。</p>
+      <div class="request-grid">
+        <aside class="contact-card" aria-label="ご連絡先">
+          <p>ご依頼・ご相談はメールで承っています。2〜3営業日以内にお返事します。</p>
+          <a class="btn-request" href="mailto:kidukakanata@gmail.com?subject=%E3%81%8A%E4%BB%95%E4%BA%8B%E3%81%AE%E3%81%94%E4%BE%9D%E9%A0%BC&body=%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%88%E5%BE%A1%E7%A4%BE%E5%90%8D%EF%BC%89%EF%BC%9A%0A%E7%94%A8%E9%80%94%EF%BC%9A%0A%E3%82%B5%E3%82%A4%E3%82%BA%E3%83%BB%E7%82%B9%E6%95%B0%EF%BC%9A%0A%E7%B4%8D%E6%9C%9F%EF%BC%9A%0A%E3%81%94%E4%BA%88%E7%AE%97%EF%BC%9A%0A%E3%81%9D%E3%81%AE%E4%BB%96%EF%BC%9A%0A">メールで相談する</a>
+          <div class="mail">kidukakanata@gmail.com</div>
+        </aside>
+      </div>
+      <ul class="notes">
+        <li>メールのテンプレートに沿って書いていただくと、お見積りがスムーズです。</li>
+        <li>スケジュールの都合でお受けできない場合もございます。</li>
+      </ul>
+    </section>
+  </div>
 </main>
 
 <footer>

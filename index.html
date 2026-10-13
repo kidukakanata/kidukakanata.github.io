@@ -85,7 +85,7 @@ section{scroll-margin-top:80px}
 .work .ph{width:100%;height:100%;display:grid;place-items:center;color:var(--muted);font-size:12px}
 .work figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;color:#fff;font-size:12px;line-height:1.6;background:linear-gradient(transparent,rgba(20,20,24,.5));opacity:0;transition:opacity .3s;pointer-events:none}
 .work button:hover+figcaption,.work button:focus-visible+figcaption{opacity:1}
-.work:not(:has(img)) figcaption{display:none}
+.work:not(:has(img)){display:none} /* 画像の入っていない枠は非表示 */
 @media (hover:none){.work figcaption{opacity:1}}
 @media (max-width:620px){.gallery{grid-template-columns:repeat(2,1fr)}}
 
@@ -154,7 +154,7 @@ footer .latin{letter-spacing:.14em}
   <div class="wrap">
     <a class="logo" href="#top">KIDUKA KANATA</a>
     <nav class="nav" aria-label="サイト内">
-      <a class="nav-link" href="#works">WORKS</a>
+      <a class="nav-link" href="#illust">ILLUST</a>
       <a class="nav-link" href="#profile">PROFILE</a>
       <a class="nav-mail" href="#request" aria-label="お仕事のご依頼" title="お仕事のご依頼">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>
@@ -176,12 +176,12 @@ footer .latin{letter-spacing:.14em}
     <p><span class="name">木塚カナタ<span class="latin">ILLUSTRATOR</span></span></p>
   </div>
 
-  <section id="works" class="section">
+  <section id="illust" class="section">
     <div class="wrap">
-      <div class="section-head"><h2>WORKS</h2><p>作品</p></div>
+      <div class="section-head"><h2>ILLUST</h2><p>作品</p></div>
       <div class="filters" role="group" aria-label="作品の絞り込み">
         <button type="button" data-filter="all" aria-pressed="true">ALL</button>
-        <button type="button" data-filter="commission" aria-pressed="false">COMMISSION</button>
+        <button type="button" data-filter="commission" aria-pressed="false">WORKS</button>
         <button type="button" data-filter="original" aria-pressed="false">ORIGINAL</button>
       </div>
       <div class="gallery" id="gallery">

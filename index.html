@@ -9,7 +9,7 @@
 <meta property="og:title" content="木塚カナタ Kiduka Kanata">
 <meta property="og:description" content="イラストレーター木塚カナタのポートフォリオ。作品一覧とお仕事のご依頼窓口。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://kidukakanata.github.io/images/hero.jpg">
+<meta property="og:image" content="https://kidukakanata.github.io/images/hero-pc.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@kanata2129">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,14 +52,15 @@ a{color:inherit}
 
 /* ── ヒーロー：絵を画面いっぱいに ── */
 .hero{position:relative;height:calc(100svh - 68px);min-height:420px;background:var(--tint);overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:60% 6%;animation:fade 1.8s ease both}
+.hero picture{display:block;height:100%}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;animation:fade 1.8s ease both}
 .hero .ph{height:100%;display:grid;place-items:center;color:var(--muted);font-size:13px}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .intro{padding-top:clamp(40px,6vw,72px)}
 .intro p{margin:0;font-size:13px;color:var(--muted)}
 .intro .name{font-size:15px;color:var(--ink);margin-right:14px}
 .intro .name .latin{font-size:11px;letter-spacing:.16em;color:var(--muted);margin-left:10px}
-@media (max-width:760px){.hero{height:auto;aspect-ratio:4/5;min-height:0}}
+@media (max-width:760px){.hero{height:auto;aspect-ratio:4/5;min-height:0}.hero img{object-position:60% 6%}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 
 /* ── セクション共通 ── */
@@ -166,7 +167,10 @@ footer .latin{letter-spacing:.14em}
   <!-- トップの絵：<div class="ph">…</div> を <img id="heroImg" src="images/hero.jpg" alt="作品名"> に差し替える。
        差し色は絵から自動で決まる。色を指定したいときは img に data-accent="#色コード" を書く -->
   <div class="hero">
-    <img id="heroImg" src="images/hero.jpg" alt="猫と過ごす眼鏡の少女のイラスト" width="1000" height="1000" fetchpriority="high">
+    <picture>
+      <source media="(min-width:761px)" srcset="images/hero-pc.jpg" width="1920" height="960">
+      <img id="heroImg" src="images/hero.jpg" alt="猫と過ごす眼鏡の少女のイラスト" width="1000" height="1000" fetchpriority="high">
+    </picture>
   </div>
   <div class="wrap intro">
     <p><span class="name">木塚カナタ<span class="latin">ILLUSTRATOR</span></span></p>

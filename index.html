@@ -94,6 +94,23 @@ dialog.viewer{border:0;padding:0;background:transparent;max-width:96vw;max-heigh
 dialog.viewer::backdrop{background:rgba(255,255,255,.96)}
 .viewer img{max-width:92vw;max-height:84vh;width:auto;height:auto}
 .viewer p{color:var(--muted);font-size:13px;margin:12px 0 0;text-align:center}
+/* シリーズ（複数枚）タイル */
+.work .count{position:absolute;top:10px;right:10px;font-family:var(--latin);font-size:10px;letter-spacing:.14em;color:#fff;background:rgba(20,20,24,.55);padding:3px 9px;border-radius:999px;pointer-events:none}
+
+/* ── シリーズ表示：縦スクロールで全作品 ── */
+dialog.series{border:0;padding:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:var(--wall);overflow-y:auto;overscroll-behavior:contain}
+dialog.series::backdrop{background:var(--wall)}
+.series-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:10px var(--gutter);background:rgba(255,255,255,.94);backdrop-filter:blur(10px)}
+.series-head h2{margin:0;font-size:14px;font-weight:500;letter-spacing:.1em;line-height:1.4}
+.series-head h2 small{font-weight:400;font-size:11px;color:var(--muted);margin-left:10px}
+.series-head .close{font-family:var(--latin);font-size:11px;letter-spacing:.16em;background:none;border:0;color:var(--ink);padding:8px;cursor:pointer}
+.series-list{list-style:none;margin:0 auto;padding:clamp(16px,3vw,40px) var(--gutter) 96px;max-width:calc(1000px + var(--gutter)*2);display:grid;gap:clamp(24px,5vw,72px)}
+.series-list li{width:min(100%,calc(100dvh - 150px));min-width:min(100%,320px);margin:0 auto}
+.series-list img{width:100%;height:auto;aspect-ratio:1;background:var(--tint)}
+@media (max-width:620px){.series-head h2 small{display:block;margin:2px 0 0}}
+.series-list .no{display:block;font-family:var(--latin);font-size:10px;letter-spacing:.16em;color:var(--muted);margin-top:8px;text-align:right}
+body:has(dialog[open]){overflow:hidden}
+
 .viewer .close{position:fixed;top:18px;right:20px;font-family:var(--latin);font-size:11px;letter-spacing:.16em;background:none;border:0;color:var(--ink);padding:8px;cursor:pointer}
 
 /* ── プロフィールとご依頼を横並びに ── */
@@ -187,8 +204,9 @@ footer .latin{letter-spacing:.14em}
       <div class="gallery" id="gallery">
         <!-- 作品の追加：figure をコピーして画像・タイトル・data-cat（commission / original）を書き換える。
              推しの作品は class="work feature" で大きく表示 -->
-        <figure class="work feature" data-cat="original"><button type="button" data-note="オリジナル"><img src="images/works/cat-coffee-thumb.jpg" data-full="images/hero.jpg" alt="猫と過ごす眼鏡の少女のイラスト" width="800" height="800" loading="lazy"></button><figcaption>オリジナル</figcaption></figure>
-        <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
+        <!-- 複数枚のシリーズ：button に data-series="シリーズ名" を書くと、クリックで縦スクロール表示になる（中身は下の script の SERIES に書く） -->
+        <figure class="work feature" data-cat="commission"><button type="button" data-series="mementomori"><img src="images/works/mementomori/mm-thumb.jpg" alt="メメントモリ キャラクターイラスト" width="800" height="800"><span class="count">23 ILLUSTS</span></button><figcaption>メメントモリ／キャラクターイラスト</figcaption></figure>
+        <figure class="work" data-cat="original"><button type="button" data-note="オリジナル"><img src="images/works/cat-coffee-thumb.jpg" data-full="images/hero.jpg" alt="猫と過ごす眼鏡の少女のイラスト" width="800" height="800" loading="lazy"></button><figcaption>オリジナル</figcaption></figure>
         <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
         <figure class="work" data-cat="original"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
         <figure class="work" data-cat="commission"><button type="button"><div class="ph">作品画像</div></button><figcaption>作品タイトル</figcaption></figure>
@@ -266,7 +284,24 @@ footer .latin{letter-spacing:.14em}
   <p id="viewerCaption"></p>
 </dialog>
 
+<dialog class="series" id="series" aria-labelledby="seriesTitle">
+  <div class="series-head">
+    <h2 id="seriesTitle"></h2>
+    <button type="button" class="close" id="seriesClose">CLOSE</button>
+  </div>
+  <ol class="series-list" id="seriesList"></ol>
+</dialog>
+
 <script>
+// シリーズ作品（画像は images/works/<フォルダ>/ に置く）
+const SERIES={
+  mementomori:{
+    title:'メメントモリ',
+    note:'キャラクターイラスト　© Bank of Innovation, Inc.',
+    alt:'メメントモリ キャラクターイラスト',
+    images:Array.from({length:23},(_,i)=>`images/works/mementomori/mm-${String(i+1).padStart(2,'0')}.jpg`)
+  }
+};
 // トップの絵から差し色をもらう（絵の中で多く使われている鮮やかな色み）
 function pickAccent(img){
   try{
@@ -314,9 +349,28 @@ function openViewer(img,title,note){
 }
 document.getElementById('gallery').addEventListener('click',e=>{
   const btn=e.target.closest('button'); if(!btn) return;
+  if(btn.dataset.series){ openSeries(btn.dataset.series); return; }
   const img=btn.querySelector('img'); if(!img) return;
   openViewer(img,btn.dataset.title,btn.dataset.note);
 });
+// シリーズ表示
+const series=document.getElementById('series'),sList=document.getElementById('seriesList'),sTitle=document.getElementById('seriesTitle');
+function openSeries(key){
+  const s=SERIES[key]; if(!s) return;
+  sTitle.innerHTML=''; sTitle.append(s.title);
+  const sm=document.createElement('small'); sm.textContent=s.note; sTitle.append(sm);
+  sList.innerHTML='';
+  s.images.forEach((src,i)=>{
+    const li=document.createElement('li'),img=document.createElement('img');
+    img.src=src; img.alt=`${s.alt} ${i+1}`; img.width=1000; img.height=1000; img.decoding='async';
+    if(i>1) img.loading='lazy';
+    const no=document.createElement('span'); no.className='no'; no.textContent=`${String(i+1).padStart(2,'0')} / ${s.images.length}`;
+    li.append(img,no); sList.append(li);
+  });
+  series.showModal(); series.scrollTop=0;
+}
+document.getElementById('seriesClose').addEventListener('click',()=>series.close());
+
 document.getElementById('viewerClose').addEventListener('click',()=>viewer.close());
 viewer.addEventListener('click',e=>{if(e.target===viewer) viewer.close();});
 // メールアドレスのコピー
